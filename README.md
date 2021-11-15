@@ -25,3 +25,6 @@ In the world of social gatherings and potlucks the "Potluck Planner" is king. Th
 1. Add a reminders functionality that allows users to link up their upcoming `date`s to their Google calendar.
 
 2. Ability to upload multiple `photos` from the potluck gathering, like a photo gallery for a past event.
+
+### Link to class names for styling shared doc
+https://docs.google.com/document/d/1nkA7Xo5Pbbkb2JkDORICQk7ChhfeQY1nQfXKTpJEIfo/edit?usp=sharing
