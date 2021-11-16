@@ -1,5 +1,23 @@
 import React, { useState, useEffect } from 'react';
-import 'GlobalStyles.css';
+import '../GlobalStyles.css';
+import styled from 'styled-components';
+import axios from 'axios';
+
+
+// axios.get('')
+//   .then
+//   .
+
+const StyledDashboard = styled.div`
+  width: 60%;
+  display: flex;
+  justify-content: flex-start;
+  padding: 8px;
+  border-bottom: 2px solid white;
+
+  background-color: ${pr => pr.theme.primaryColor};
+  color: ${pr => pr.theme.white}; 
+`
 const myPotlucks = [ 
   {
     meetingName: 'Foodapaloosa',
@@ -53,14 +71,14 @@ const Dashboard = () => {
   }
   console.log(confirmed);
     return(
-    <>
+    <StyledDashboard>
     <section id='dashboard'>
-      <h1>Dashboard</h1>
-      <button onClick={newPotluck}>Create New Potluck</button>
+      <h1 className='pageTitle'>Dashboard</h1>
+      <button className='styledButton' onClick={newPotluck}>Create New Potluck</button>
     </section>
     
     <section id='myPotlucks' className='mtg-container'>
-      <h2>My Potucks</h2>
+      <h2>My Potlucks</h2>
       {
         myPotlucks.map( potluck => {
             return (
@@ -79,12 +97,15 @@ const Dashboard = () => {
                 { `${confirmText}`}
               </button>
             </div>
+            <div>
+
+            </div>
           </div>
         )})
     }
       
     </section>
-    </>
+    </StyledDashboard>
   )  
 }
 
