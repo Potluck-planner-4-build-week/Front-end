@@ -1,8 +1,13 @@
 import React from "react";
 
-const Login = (props) => {
+const initialLoginValues = {
+  username: '',
+  password: ''
+}
 
-  const { username, password } = props.values;
+const Login = (props) => {
+  const { submit } = props;
+  //const { username, password } = props.values;
 
   const onChange = (e) => {
     console.log(e);
@@ -10,6 +15,7 @@ const Login = (props) => {
 
   const onSubmit = (e) => {
     e.preventDefault();
+    submit();
   }
 
   return (
@@ -21,17 +27,17 @@ const Login = (props) => {
             id='username-input'
             type='text'
             name='username' 
-            value={username}
+            //value={username}
             onChange={onChange}
           />
         </label>
 
-        <label>
+        <label> Password:
           <input
             id='password-input'
             type='text'
             name='password'
-            value={password}
+            //value={password}
             onChange={onChange}
           />
         </label>
