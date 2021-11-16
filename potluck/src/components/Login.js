@@ -19,7 +19,7 @@ const Login = (props) => {
   }
 
   return (
-    <div>
+    <div className='login-page'>
       <h1>Login</h1>
       <form id='login' onSubmit={onSubmit}>
         <label> Username:
@@ -41,6 +41,8 @@ const Login = (props) => {
             onChange={onChange}
           />
         </label>
+
+        <input type='submit' value='submit' />
       </form>
     </div>
   );
