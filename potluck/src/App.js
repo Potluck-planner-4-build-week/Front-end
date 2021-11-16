@@ -4,7 +4,7 @@ import { PrivateRoute } from "./components/PrivateRoute";
 
 import CreatePotluckPage from "./components/CreatePotluckPage";
 import Logout from "./components/Logout";
-import Login from "./components/Login";
+import Login from "./components/Login"; 
 
 function App() {
   return (
@@ -24,6 +24,7 @@ function App() {
         </PrivateRoute>
       </Switch>
     </div>
+   
   );
 }
 
