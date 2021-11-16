@@ -5,13 +5,16 @@ import CoverPage from "./components/CoverPage";
 import CreatePotluckPage from "./components/CreatePotluckPage";
 import Logout from "./components/Logout";
 import Login from "./components/Login";
+import NavBar from "./components/NavBar";
+import Signup from "./components/Signup";
 import ViewPage from "./components/ViewPage/ViewPage";
+import * as yup from "yup";
+import form from "./components/Validation/LoginFormSchema";
+
 function App() {
   return (
     <div className="App">
-      <nav>
-        <Link to="/logout">Logout</Link>
-      </nav>
+      <NavBar />
       <Switch>
         <PrivateRoute path="/logout">
           <Logout />
@@ -27,6 +30,9 @@ function App() {
         </PrivateRoute>
         <Route exact path="/">
           <CoverPage />
+        </Route>
+        <Route path="/signup">
+          <Signup />
         </Route>
       </Switch>
     </div>
