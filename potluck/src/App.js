@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Switch, Link, Route, Redirect } from "react-router-dom";
 import { PrivateRoute } from "./components/PrivateRoute";
-
+import CoverPage from "./components/CoverPage";
 import CreatePotluckPage from "./components/CreatePotluckPage";
 import Logout from "./components/Logout";
 import Login from "./components/Login";
@@ -25,6 +25,9 @@ function App() {
         <PrivateRoute path="/potluck/view">
           <ViewPage />
         </PrivateRoute>
+        <Route exact path="/">
+          <CoverPage />
+        </Route>
       </Switch>
     </div>
   );
