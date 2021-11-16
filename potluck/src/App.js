@@ -9,23 +9,23 @@ import
 
 function App() {
   return (
-    // <div className="App">
-    //   <nav>
-    //   <Link to="/logout">Logout</Link>
-    //   </nav>
-    //   <Switch>
-    //     <PrivateRoute path="/logout">
-    //       <Logout />
-    //     </PrivateRoute>
-    //     <Route path="/login">
-    //       <Login />
-    //     </Route>
-    //     <PrivateRoute path="/potluck/create">
-    //       <CreatePotluckPage />
-    //     </PrivateRoute>
-    //   </Switch>
-    // </div>
-    <Dashboard />
+    <div className="App">
+      <nav>
+      <Link to="/logout">Logout</Link>
+      </nav>
+      <Switch>
+        <PrivateRoute path="/logout">
+          <Logout />
+        </PrivateRoute>
+        <Route path="/login">
+          <Login />
+        </Route>
+        <PrivateRoute path="/potluck/create">
+          <CreatePotluckPage />
+        </PrivateRoute>
+      </Switch>
+    </div>
+   
   );
 }
 
