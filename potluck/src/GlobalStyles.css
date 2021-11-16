@@ -36,15 +36,6 @@ html {
   font-size: 62.5%;
 }
 
-section {
-  width: 00vw;
-  font-size: 1.6rem;
-  color: white;
-  font-family: "Yanone Kaffeesatz", sans-serif;
-  background: black;
-  margin: none;
-}
-
 h1,
 h2,
 h3 {
@@ -78,27 +69,14 @@ h3 {
   font-size: 5rem;
 }
 
-button {
-  padding: 5px;
-  border-radius: 5px;
-  background-color: #92828d;
-}
-
-.styledButton {
-  font-family: "Yanone Kaffeesatz", sans-serif;
-  font-weight: 400;
-  color: black;
-  text-align: center;
-  letter-spacing: 0.1rem;
-  font-size: 2rem;
-  background-color: #adaabf;
-  border: 2px solid #92828d;
-}
-
 .info {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: start;
   background-color: #d2d2d2;
-  padding: 1vw;
-  line-height: 2;
+  padding-left: 10vw;
+  font-size: 1.8rem;
+  line-height: 1.5;
 }
 /*  info is a list: date/time info etc */
 
@@ -109,9 +87,109 @@ button {
 }
 
 .meeting {
+  width: auto;
+  min-width: 70vw;
   background-color: #eaf7cf;
   border: 3px solid #ceb5a7;
   border-radius: 3px;
   color: black;
   margin-bottom: 15px;
+}
+
+nav {
+  background-color: black;
+  margin: none;
+  height: 10vw;
+}
+
+a {
+  font: inherit;
+  text-align: center;
+  padding-top: 1vw;
+  font-size: 2rem;
+  display: block;
+  color: white;
+  background-color: #92828d;
+  width: 30vw;
+  height: 9vw;
+  text-shadow: 2px 2px black;
+  text-decoration: none; 
+  border: 2px solid #adaabf;
+  border-radius: 0 0 5px 0;
+}
+
+section {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100vw;
+  font-size: 1.6rem;
+  color: white;
+  font-family: "Yanone Kaffeesatz", sans-serif;
+  background: black;
+  margin: none;
+}
+
+
+
+form {
+  display: flex;
+  flex-flow: column nowrap;
+  max-width:fit-content;
+  height: 85vh;
+}
+
+form * {
+  margin: 1vw auto;
+  padding: 5px 20px;
+}
+
+button {
+  border-radius: 5px;
+  background-color: #92828d;
+  max-width: fit-content;
+  font: inherit;
+}
+
+input {
+  width: 80vw;
+}
+
+/*before and after and positioning*/
+.styledButton {
+  font-family: "Yanone Kaffeesatz", sans-serif;
+  font-weight: 400;
+  color: black;
+  text-align: center;
+  letter-spacing: 0.1rem;
+  font-size: 2rem;
+  margin: 1vw auto;
+  padding: 5px 20px;
+  background-color: #adaabf;
+  border: 2px solid #92828d;
+}
+
+.hidden {
+  display: none;
+}
+
+
+label {
+  display: block;
+}
+
+@media (max-width: 500px) {
+
+}
+
+@media (max-width: 700px) {
+  
+}
+@media (max-width: 900px) {
+  
+}
+
+@media (max-width: 1200px) {
+  
 }
