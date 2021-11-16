@@ -1,15 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 
 const initialLoginValues = {
   username: '',
   password: ''
 }
 
-const Login = (props) => {
+const Login = () => {
   //const { username, password } = props.values;
+  const [loginValues, setLoginValues] = useState(initialLoginValues)
 
   const onChange = (e) => {
-    console.log(e);
+    setLoginValues({
+      ...loginValues,
+      [e.target.name]: e.target.value
+    })
+    console.log(e.target.name)
   }
 
   const onSubmit = (e) => {
@@ -26,7 +31,7 @@ const Login = (props) => {
             id='username-input'
             type='text'
             name='username' 
-            //value={username}
+            value={loginValues.username}
             onChange={onChange}
           />
         </label>
@@ -34,9 +39,9 @@ const Login = (props) => {
         <label> Password:
           <input
             id='password-input'
-            type='text'
+            type='password'
             name='password'
-            //value={password}
+            value={loginValues.password}
             onChange={onChange}
           />
         </label>

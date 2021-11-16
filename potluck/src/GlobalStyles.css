@@ -1,0 +1,117 @@
+*/
+/* Eric Meyer's reset*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+:focus {
+  outline: 0;
+}
+
+*{
+  box-sizing:border-box;
+  padding:0;
+  margin: 0;
+  max-width: 100%;
+}
+
+html{
+  font-size:62.5%;
+}
+
+section {
+  width: 50vw;
+  font-size:1.6rem;
+  color: white;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  background: black;
+  margin: none;
+}
+
+h1, h2, h3{
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-weight: 400;
+  color:white;
+  text-align:center;
+  letter-spacing: 0.1rem;
+  padding: 30px 0px;
+}
+
+h2{
+  font-size: 4rem;
+}
+
+h3{
+  color: black;
+  font-size: 3rem;
+}
+
+.container {
+  border: 1px solid #d2d2d2;
+  border-radius: 8px;
+  margin-top: 16px;
+  padding: 16px;
+}
+
+
+.pageTitle {
+  color:white;
+  font-weight: 300;
+  font-size: 5rem
+}
+
+button { 
+  padding: 5px;
+  border-radius: 5px;
+  background-color: #92828d;
+}
+
+.styledButton {
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-weight: 400;
+  color: black;
+  text-align:center;
+  letter-spacing: 0.1rem;
+  font-size: 2rem;
+  background-color: #adaabf; 
+  border: 2px solid  #92828d;
+}
+
+.info {
+  background-color: #d2d2d2;
+  padding: 1vw;
+  line-height: 2;
+}
+/*  info is a list: date/time info etc */
+
+
+.alert {
+  padding: 20px;
+  border-radius: 3px;
+  margin-bottom: 15px;
+}
+
+.meeting {
+  background-color: #eaf7cf;
+  border: 3px solid #ceb5a7;
+  border-radius: 3px;
+  color: black;
+  margin-bottom: 15px;
+}
