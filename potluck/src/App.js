@@ -5,17 +5,17 @@ import { PrivateRoute } from "./components/PrivateRoute";
 import CreatePotluckPage from "./components/CreatePotluckPage";
 import Logout from "./components/Logout";
 import Login from "./components/Login"; 
+
 import Signup from "./components/Signup";
 
 import * as yup from 'yup';
 import form from './components/Validation/LoginFormSchema';
 
+
 function App() {
   return (
     <div className="App">
-      <nav>
-      <Link to="/logout">Logout</Link>
-      </nav>
+      <NavBar />
       <Switch>
         <PrivateRoute path="/logout">
           <Logout />
