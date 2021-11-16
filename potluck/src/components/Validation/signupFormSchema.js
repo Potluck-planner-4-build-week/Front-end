@@ -25,3 +25,5 @@ const formSchemaSignup = yup.object().shape({
     .string()
     .required('Must match password entered')
 })
+
+export default formSchemaSignup;

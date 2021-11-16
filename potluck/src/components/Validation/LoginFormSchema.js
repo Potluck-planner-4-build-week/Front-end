@@ -11,3 +11,5 @@ const formSchema = yup.object().shape({
     .string()
     .required('Enter your password')
 })
+
+export default formSchema;
