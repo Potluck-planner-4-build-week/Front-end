@@ -70,7 +70,7 @@ const Signup = () => {
                 id='signup-confirm-password'
                 type='password'
                 name='confirm-password'
-                value={signupValues.confirmPassword}
+                //value={signupValues.confirmPassword}
                 onChange={onChange}
             />
         </label>
