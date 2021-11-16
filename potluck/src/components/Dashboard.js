@@ -71,6 +71,7 @@ const Dashboard = () => {
   }
   console.log(confirmed);
     return(
+        
     <StyledDashboard>
     <section id='dashboard'>
       <h1 className='pageTitle'>Dashboard</h1>

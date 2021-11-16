@@ -45,12 +45,6 @@ section {
   margin: none;
 }
 
-body.light{
-  color: black;
-  background: white;
-}
-
-
 h1, h2, h3{
   font-family: 'Yanone Kaffeesatz', sans-serif;
   font-weight: 400;
