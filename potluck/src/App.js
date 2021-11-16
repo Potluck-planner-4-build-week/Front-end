@@ -1,12 +1,24 @@
 import React, { useEffect, useState } from "react";
-import { Switch, Route, Redirect } from "react-router-dom";
+import { Switch, Link, Route, Redirect } from "react-router-dom";
 import { PrivateRoute } from "./components/PrivateRoute";
 
 import CreatePotluckPage from "./components/CreatePotluckPage";
+import Logout from "./components/Logout";
+import Login from "./components/Login";
+
 function App() {
   return (
     <div className="App">
+      <nav>
+      <Link to="/logout">Logout</Link>
+      </nav>
       <Switch>
+        <PrivateRoute path="/logout">
+          <Logout />
+        </PrivateRoute>
+        <PrivateRoute path="/login">
+          <Login />
+        </PrivateRoute>
         <PrivateRoute path="/potluck/create">
           <CreatePotluckPage />
         </PrivateRoute>
