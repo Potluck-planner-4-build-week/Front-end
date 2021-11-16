@@ -9,7 +9,6 @@ const initialSignupValues = {
   }
 
 const Signup = () => {
-  //const { username, password } = props.values;
   const [signupValues, setSignupValues] = useState(initialSignupValues)
 
   const onChange = (e) => {
@@ -30,13 +29,13 @@ const Signup = () => {
       <h1 className='pageTitle'>Login</h1>
       <form id='signup' onSubmit={onSubmit}>
         <label> Username:
-          <input 
-            id='signup-username'
-            type='text'
-            name='username' 
-            //value={signupValues.username}
-            onChange={onChange}
-          />
+            <input 
+                id='signup-username'
+                type='text'
+                name='username' 
+                //value={signupValues.username}
+                onChange={onChange}
+            />
         </label>
         <label> Email:
             <input
@@ -57,13 +56,13 @@ const Signup = () => {
             />
         </label> 
         <label> Password:
-          <input
-            id='signup-password'
-            type='password'
-            name='password'
-            //value={signupValues.password}
-            onChange={onChange}
-          />
+            <input
+                id='signup-password'
+                type='password'
+                name='password'
+                //value={signupValues.password}
+                onChange={onChange}
+            />
         </label>
         <label> Confirm Password:
             <input
