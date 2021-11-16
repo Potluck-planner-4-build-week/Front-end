@@ -16,9 +16,9 @@ function App() {
         <PrivateRoute path="/logout">
           <Logout />
         </PrivateRoute>
-        <PrivateRoute path="/login">
+        <Route path="/login">
           <Login />
-        </PrivateRoute>
+        </Route>
         <PrivateRoute path="/potluck/create">
           <CreatePotluckPage />
         </PrivateRoute>
