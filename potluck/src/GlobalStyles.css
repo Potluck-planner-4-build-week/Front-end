@@ -36,6 +36,19 @@ html {
   font-size: 62.5%;
 }
 
+section {
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100vw;
+  height: 70vw;
+  font-size: 1.6rem;
+  color: white;
+  font-family: "Yanone Kaffeesatz", sans-serif;
+  background: black;
+  margin: none;
+}
+
 h1,
 h2,
 h3 {
@@ -115,20 +128,6 @@ a {
   text-decoration: none; 
   border: 2px solid #adaabf;
   border-radius: 0 0 5px 0;
-}
-
-section {
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: flex-start;
-  align-items: center;
-  width: 100vw;
-  height: 70vw;
-  font-size: 1.6rem;
-  color: white;
-  font-family: "Yanone Kaffeesatz", sans-serif;
-  background: black;
-  margin: none;
 }
 
 form {
