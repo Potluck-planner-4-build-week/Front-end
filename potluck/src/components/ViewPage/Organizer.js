@@ -1,7 +1,7 @@
 import React from "react";
 
-const ViewPage = () => {
+const Organizer = () => {
   return <div></div>;
 };
 
-export default ViewPage;
+export default Organizer;

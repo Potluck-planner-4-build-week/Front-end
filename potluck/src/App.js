@@ -4,13 +4,13 @@ import { PrivateRoute } from "./components/PrivateRoute";
 
 import CreatePotluckPage from "./components/CreatePotluckPage";
 import Logout from "./components/Logout";
-import Login from "./components/Login"; 
-
+import Login from "./components/Login";
+import ViewPage from "./components/ViewPage/ViewPage";
 function App() {
   return (
     <div className="App">
       <nav>
-      <Link to="/logout">Logout</Link>
+        <Link to="/logout">Logout</Link>
       </nav>
       <Switch>
         <PrivateRoute path="/logout">
@@ -22,9 +22,11 @@ function App() {
         <PrivateRoute path="/potluck/create">
           <CreatePotluckPage />
         </PrivateRoute>
+        <PrivateRoute path="/potluck/view">
+          <ViewPage />
+        </PrivateRoute>
       </Switch>
     </div>
-   
   );
 }
 
