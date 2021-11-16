@@ -37,7 +37,8 @@ html {
 }
 
 section {
-  width: 50vw;
+  width: 100vw;
+  height: 70vw;
   font-size: 1.6rem;
   color: white;
   font-family: "Yanone Kaffeesatz", sans-serif;
