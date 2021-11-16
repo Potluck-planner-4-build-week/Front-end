@@ -1,13 +1,50 @@
 import React from "react";
 
-const Login = () => {
+const initialLoginValues = {
+  username: '',
+  password: ''
+}
+
+const Login = (props) => {
+  //const { username, password } = props.values;
+
+  const onChange = (e) => {
+    console.log(e);
+  }
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+  }
+
   return (
-    <div>
-      <form>
-        <input type="text" />
-        <input type="text" />
+  <section>
+    <div className='login-page'>
+      <h1 className='pageTitle'>Login</h1>
+      <form id='login' onSubmit={onSubmit}>
+        <label> Username:
+          <input 
+            id='username-input'
+            type='text'
+            name='username' 
+            //value={username}
+            onChange={onChange}
+          />
+        </label>
+
+        <label> Password:
+          <input
+            id='password-input'
+            type='text'
+            name='password'
+            //value={password}
+            onChange={onChange}
+          />
+        </label>
+
+        <button>Submit</button>
       </form>
     </div>
+  </section>
   );
 };
 
