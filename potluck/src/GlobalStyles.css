@@ -123,6 +123,7 @@ section {
   justify-content: flex-start;
   align-items: center;
   width: 100vw;
+  height: 70vw;
   font-size: 1.6rem;
   color: white;
   font-family: "Yanone Kaffeesatz", sans-serif;

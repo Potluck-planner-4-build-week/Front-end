@@ -4,6 +4,8 @@ import styled from "styled-components";
 
 
 const StyledDashboard = styled.div`
+  display: flex;
+  flex-direction: column;
   min-height: 100vh;
   background-color: black;
 `
@@ -101,12 +103,8 @@ const Dashboard = () => {
 
   return (
     <StyledDashboard>
-
-      <section id="dashboard">
-        <h1 className="pageTitle">Dashboard</h1>
-        <button className="styledButton" onClick={newPotluck}>Create New Potluck</button>
-      </section>
-
+      <h1 className="pageTitle">Dashboard</h1>
+      <button className="styledButton" onClick={newPotluck}>Create New Potluck</button>
       <h2>My Potlucks</h2>
 
       <section id="myPotlucks" className="mtg-container">

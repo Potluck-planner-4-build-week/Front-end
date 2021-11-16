@@ -23,8 +23,9 @@ function App() {
           <CreatePotluckPage />
         </PrivateRoute>
       </Switch>
+
     </div>
- 
+   
   );
 }
 
