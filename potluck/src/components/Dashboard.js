@@ -22,35 +22,34 @@ const myPotlucks = [
   {
     meetingName: 'Foodapaloosa',
     people: [
-      {userName:'Abe123', dish: 'spaghetti'}, 
-      {userName:'Gabe234', dish: 'cookies'},
-      {userName:'Sal123', dish: 'biscuits'},
-      {userName:'Phil2', dish: 'pretzels'}
+      {userName:'Abe123', dish: 'spaghetti', role: 'organizer'}, 
+      {userName:'Gabe234', dish: 'cookies', role: 'guest'},
+      {userName:'Sal123', dish: 'biscuits', role: 'guest'},
+      {userName:'Phil2', dish: 'pretzels', role: 'guest'}
     ],
-    organizer: 'Phil2',
     date: '11/19/2021',
     time: '12PM-1PM',
     location: 'McArthur Park',
+    userRole: 'guest',
     userDish: 'pretzels',
     confirmed: false
   },
   {
     meetingName: 'Feast Fest',
     people: [
-      {userName:'Abe123', dish: 'apricots'}, 
-      {userName:'Gabe234', dish: 'bread bowls'},
-      {userName:'Sal123', dish: 'chowder'},
-      {userName:'Phil2', dish: 'turkey'}
+      {userName:'Abe123', dish: 'apricots', role: 'guest'}, 
+      {userName:'Gabe234', dish: 'bread bowls', role: 'guest'},
+      {userName:'Sal123', dish: 'chowder', role: 'guest'},
+      {userName:'Phil2', dish: 'turkey', role: 'organizer'}
     ],
-    organizer: 'Sal123',
     date: '11/26/2021',
     time: '11AM-12PM',
     location: 'BJHS staff lounge',
+    userRole: 'organizer',
     userDish: 'turkey',
     confirmed: false
   }
 ]
-
 
 const Dashboard = () => {
   const [confirmed, setConfirmed] = useState(false);
@@ -59,9 +58,7 @@ const Dashboard = () => {
   useEffect(() => {
     confirmed? setConfirmText('Not Going? Cancel') : setConfirmText('Confirm You\'re Going!');
   }, [confirmed]);
-
-  const potluck1 = myPotlucks[0];
-  const currentUser = 'Phil2';
+  
   const confirmClick = (e) => {
       e.preventDefault();
       setConfirmed(!confirmed);
@@ -69,9 +66,8 @@ const Dashboard = () => {
   const newPotluck = () => {
       // link to new potluck component
   }
-  console.log(confirmed);
-    return(
-        
+    return (
+
     <StyledDashboard>
     <section id='dashboard'>
       <h1 className='pageTitle'>Dashboard</h1>
@@ -87,6 +83,7 @@ const Dashboard = () => {
             <div className='info'>
               <h3>Event: {`${potluck['meetingName']}`}</h3>
               <ul>
+                <li>Role: {`${potluck['userRole']}`}</li>
                 <li>I'm bringing: {`${potluck['userDish']}`}</li>
                 <li>Date:{`${potluck['date']}`}</li>
                 <li>Time:{`${potluck['time']}`}</li>
