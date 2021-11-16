@@ -1,4 +1,5 @@
 import React from "react";
+import '../'
 
 const initialLoginValues = {
   username: '',
@@ -6,7 +7,6 @@ const initialLoginValues = {
 }
 
 const Login = (props) => {
-  const { submit } = props;
   //const { username, password } = props.values;
 
   const onChange = (e) => {
@@ -15,12 +15,12 @@ const Login = (props) => {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    submit();
   }
 
   return (
+  <section>
     <div className='login-page'>
-      <h1>Login</h1>
+      <h1 className='pageTitle'>Login</h1>
       <form id='login' onSubmit={onSubmit}>
         <label> Username:
           <input 
@@ -42,9 +42,10 @@ const Login = (props) => {
           />
         </label>
 
-        <input type='submit' value='submit' />
+        <button>Submit</button>
       </form>
     </div>
+  </section>
   );
 };
 
