@@ -72,9 +72,8 @@ h3 {
 .info {
   display: flex;
   flex-flow: column nowrap;
-  align-items: start;
+  align-items: center;
   background-color: #d2d2d2;
-  padding-left: 10vw;
   font-size: 1.8rem;
   line-height: 1.5;
 }
@@ -87,7 +86,7 @@ h3 {
 }
 
 .meeting {
-  width: auto;
+  text-align: center;
   min-width: 70vw;
   background-color: #eaf7cf;
   border: 3px solid #ceb5a7;
@@ -131,8 +130,6 @@ section {
   margin: none;
 }
 
-
-
 form {
   display: flex;
   flex-flow: column nowrap;
@@ -156,7 +153,6 @@ input {
   width: 80vw;
 }
 
-/*before and after and positioning*/
 .styledButton {
   font-family: "Yanone Kaffeesatz", sans-serif;
   font-weight: 400;
@@ -174,22 +170,65 @@ input {
   display: none;
 }
 
-
 label {
   display: block;
 }
 
-@media (max-width: 500px) {
+@media (min-width: 500px) {
+  a {  
+    font-family: "Yanone Kaffeesatz", sans-serif;
+    text-align: center;
+    padding-top: 10px;
+    color: black;
+    width: 150px;
+    height: 40px;
+    text-shadow:none;
+    background-color: 2px solid #adaabf;
+  }
 
+  input {
+    max-width: 350px;
+  }
 }
 
-@media (max-width: 700px) {
+@media (min-width: 700px) {
+  .mtg-container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+  }
   
-}
-@media (max-width: 900px) {
-  
+  div.meeting {
+    width: 40vw;
+    min-width: auto;
+    margin: 20px;
+  }
+
+  .info *{
+    margin: 0;
+  }
+  button {
+    margin: 10px 0;
+  }
+
+  .alert {
+    height: fit-content;
+    width: 40vw;
+  }
 }
 
-@media (max-width: 1200px) {
+@media (min-width: 1200px) {
+  .mtg-container {
+    justify-content: space-between;
+  }
   
+  div.meeting {
+    width: 31vw;
+    margin: 1vw;
+  }
+
+  .alert {
+    height: fit-content;
+    width: 31vw;
+  }
 }

@@ -4,8 +4,8 @@ import styled from "styled-components";
 
 
 const StyledDashboard = styled.div`
-  color: black;
-  background-color: white;
+  min-height: 100vh;
+  background-color: black;
 `
 const myPotlucks = [ 
   {
@@ -14,13 +14,43 @@ const myPotlucks = [
       {username:"Abe123", item: "spaghetti", role: "organizer"}, 
       {username:"Gabe234", item: "cookies", role: "guest"},
       {username:"Sal123", item: "biscuits", role: "guest"},
-      {username:"Phil2", item: "pretzels, chips, soda", role: "guest"}
+      {username:"Phil2", item: "pretzels, cheese, crackers, chips, soda", role: "guest"}
     ],
     date: "11/19/2021",
     time: "12PM-1PM",
     location: "McArthur Park",
     userRole: "guest",
     userItem: "pretzels",
+    confirmed: false
+  },
+  {
+    meetingName: "Feast Fest",
+    people: [
+      {username:"Abe123", item: "apricots", role: "guest"}, 
+      {username:"Gabe234", item: "bread bowls", role: "guest"},
+      {username:"Sal123", item: "chowder", role: "guest"},
+      {username:"Phil2", item: "turkey", role: "organizer"}
+    ],
+    date: "11/26/2021",
+    time: "11AM-12PM",
+    location: "BJHS staff lounge",
+    userRole: "organizer",
+    userItem: "turkey",
+    confirmed: false
+  },
+  {
+    meetingName: "Feast Fest",
+    people: [
+      {username:"Abe123", item: "apricots", role: "guest"}, 
+      {username:"Gabe234", item: "bread bowls", role: "guest"},
+      {username:"Sal123", item: "chowder", role: "guest"},
+      {username:"Phil2", item: "turkey", role: "organizer"}
+    ],
+    date: "11/26/2021",
+    time: "11AM-12PM",
+    location: "BJHS staff lounge",
+    userRole: "organizer",
+    userItem: "turkey",
     confirmed: false
   },
   {
@@ -71,19 +101,23 @@ const Dashboard = () => {
 
   return (
     <StyledDashboard>
+
       <section id="dashboard">
         <h1 className="pageTitle">Dashboard</h1>
         <button className="styledButton" onClick={newPotluck}>Create New Potluck</button>
       </section>
-      
+
+      <h2>My Potlucks</h2>
+
       <section id="myPotlucks" className="mtg-container">
-        <h2>My Potlucks</h2>
+      
           {
             myPotlucks.map( potluck => {
               return (
               <div className="meeting" key={`meeting ${potluck["meetingName"]}`}>
                 <div className="info">
                   <h3 className="potluckName">{`${potluck["meetingName"]}`}</h3>
+                  
                   <ul>
                     <li>Role: {`${potluck["userRole"]}`}</li>
                     <li>I'm bringing: {`${potluck["userItem"]}`}</li>
@@ -100,20 +134,19 @@ const Dashboard = () => {
                     )
                   })}
                 </ul>
+
               </div>
               <div className="alert">
                 <button className="styledButton" onClick={confirmClick}>
                   { `${confirmText}`}
                 </button>
               </div>
-              <div>
-              
-              </div>
             </div>
           )})
         }
       
         </section>
+
       </StyledDashboard>
     )  
 }
