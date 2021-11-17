@@ -83,8 +83,8 @@ const Dashboard = () => {
   }, [confirmed]);
   
   const confirmClick = (e) => {
-      e.preventDefault();
-      setConfirmed(!confirmed);
+    e.preventDefault();
+    setConfirmed(!confirmed);
   }
   
   useEffect(() => {

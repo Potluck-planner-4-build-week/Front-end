@@ -2,6 +2,12 @@ import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 //axios is here for  now until we make axiosWithAuth()
 import axios from "axios";
+import styled from "styled-components";
+
+const StyledCreatePage = styled.div`
+  color: red;
+
+`
 
 const initialPotluckValues = {
   potluck_name: "",
@@ -29,28 +35,30 @@ const CreatePotluckPage = () => {
     });
   };
   return (
-    <div>
-      <h1 className="pageTitle">Create Your Potluck</h1>
-      <form onSubmit={handleSubmit}>
-        <label>
-          Event Name:
-          <input type="text" name="potluck_name" onChange={handleChange} />
-        </label>
-        <label>
-          Location:
-          <input type="text" name="location" onChange={handleChange} />
-        </label>
-        <label>
-          Date (mm-dd-yy):
-          <input type="text" name="date" onChange={handleChange} />
-        </label>
-        <label>
-          Time (hh:mm:ss):
-          <input type="text" name="time" onChange={handleChange} />
-        </label>
-        <button>Create Potluck</button>
-      </form>
-    </div>
+    <StyledCreatePage>
+      <div>
+        <h1 className="pageTitle">Create Your Potluck</h1>
+        <form onSubmit={handleSubmit}>
+          <label>
+            Event Name:
+            <input type="text" name="potluck_name" onChange={handleChange} />
+          </label>
+          <label>
+            Location:
+            <input type="text" name="location" onChange={handleChange} />
+          </label>
+          <label>
+            Date (mm-dd-yy):
+            <input type="text" name="date" onChange={handleChange} />
+          </label>
+          <label>
+            Time (hh:mm:ss):
+            <input type="text" name="time" onChange={handleChange} />
+          </label>
+          <button>Create Potluck</button>
+        </form>
+      </div>
+    </StyledCreatePage>
   );
 };
 
