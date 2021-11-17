@@ -5,6 +5,8 @@ import { PrivateRoute } from "./components/PrivateRoute";
 import CreatePotluckPage from "./components/CreatePotluckPage";
 import Logout from "./components/Logout";
 import Login from "./components/Login"; 
+import Dashboard from "./components/Dashboard"; 
+import NavBar from "./components/NavBar";
 
 import Signup from "./components/Signup";
 
@@ -23,6 +25,9 @@ function App() {
         <Route path="/login">
           <Login />
         </Route>
+        <Route path="/dashboard">
+          <Dashboard />
+        </Route>
         <PrivateRoute path="/potluck/create">
           <CreatePotluckPage />
         </PrivateRoute>
@@ -30,6 +35,7 @@ function App() {
           <Signup />
         </Route>
       </Switch>
+
     </div>
    
   );

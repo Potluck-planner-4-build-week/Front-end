@@ -26,6 +26,7 @@ export default NavBar
 const NavigationStyle = styled.div`
     padding: 1em;
     background-color: white;
+    flex-direction: column;
     display:flex;
     align-items: center;
     justify-content: space-between;
@@ -35,7 +36,12 @@ const NavigationStyle = styled.div`
         font-weight: bold;
         font-size: 2em;
         color: black;
-    }
+    } 
+    
+    @media (min-width: 500px) {
+      flex-direction: row;
+      justify-content: space-around;
+  }
 `
 
 const MenuStyle = styled.div`
