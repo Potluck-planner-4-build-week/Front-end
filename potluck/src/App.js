@@ -10,7 +10,7 @@ import Signup from "./components/Signup";
 import ViewPage from "./components/ViewPage/ViewPage";
 import * as yup from "yup";
 import form from "./components/Validation/LoginFormSchema";
-
+import Dashboard from "./components/Dashboard";
 function App() {
   return (
     <div className="App">
@@ -27,6 +27,9 @@ function App() {
         </PrivateRoute>
         <PrivateRoute path="/potluck/view">
           <ViewPage />
+        </PrivateRoute>
+        <PrivateRoute path="/dashboard">
+          <Dashboard />
         </PrivateRoute>
         <Route exact path="/">
           <CoverPage />

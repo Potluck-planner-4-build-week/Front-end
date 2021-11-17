@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
-//axios is here for  now until we make axiosWithAuth()
-import axios from "axios";
+import axiosWithAuth from "../ultils/axiosWithAuth";
 
 const initialPotluckValues = {
   potluck_name: "",
@@ -19,8 +18,12 @@ const CreatePotluckPage = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // axios.post("link here whenever its ready", potluckValues);
-    // push('/login')
+    // axiosWithAuth()
+    //   .post("/api/events", potluckValues)
+    //   .then((resp) => {
+    //     console.log(resp.data);
+    //   });
+    push("/dashboard");
   };
   const handleChange = (e) => {
     setPotluckValues({
