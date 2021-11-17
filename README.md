@@ -28,3 +28,29 @@ In the world of social gatherings and potlucks the "Potluck Planner" is king. Th
 
 ### Link to class names for styling shared doc
 https://docs.google.com/document/d/1nkA7Xo5Pbbkb2JkDORICQk7ChhfeQY1nQfXKTpJEIfo/edit?usp=sharing
+
+### API Documentation
+
+**[POST]** to `https://back-end-node-postgresql.herokuapp.com/api/auth/register`: lets a user register.
+<!-- This endpoint needs to be fixed in the backend (GIVING A 500 ERROR when called through axios) -->
+
+**[POST]** to `https://back-end-node-postgresql.herokuapp.com/api/logout`: returns the expired authentication information of the user.
+<!-- This endpoint needs to be created in the backend -->
+
+**[GET]** to `https://back-end-node-postgresql.herokuapp.com/api/users`: returns a current authentication information of a user. Pass in the following credentials as the `body` of the request: `{username: ``, password: ``}` for a successful login.
+
+**[GET]** to `https://back-end-nodes-postgresql.herokuapp.com/api/events`: returns all the events currently available.
+<!-- This endpoint needs to be created in the backend -->
+*This endpoint can only be accessed by an authenticated user.*
+
+**[POST]** to `https://back-end-nodes-postgresql.herokuapp.com/api/events`: creates an event object. Returns all available events. Pass the event as the `body` of the request.
+<!-- This endpoint needs to be created in the backend --> 
+*This endpoint can only be accessed by an authenticated user.*
+
+**[PUT]** to `https://back-end-nodes-postgresql.herokuapp.com/api/events:id`: updates the events using the `id` passed as part of the URL. Returns all available events. Sends the updated event object as the `body` of the request.
+<!-- This endpoint needs to be created in the backend (IF THERES STILL TIME!) -->
+*This endpoint can only be accessed by an authenticated user.*
+
+**[DELETE]** to `https://back-end-nodes-postgresql.herokuapp.com/api/events/:id`; removes the event with the `id` referenced. Returns all available events. 
+<!-- This endpoint needs to be created in the backend (IF THERES STILL TIME!) -->
+*This endpoint can only be accessed by an authenticated user.*
