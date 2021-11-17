@@ -76,7 +76,7 @@ const Signup = () => {
   return (
     <section>
       <div className="signup-page">
-        <h1 className="pageTitle">Login</h1>
+        <h1 className="pageTitle">Signup</h1>
         <form id="signup" onSubmit={onSubmit}>
           <div>
             <p>{formErrors.username}</p>
