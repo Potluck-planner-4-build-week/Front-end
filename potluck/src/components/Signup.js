@@ -1,5 +1,12 @@
 import React, { useState } from "react";
+import styled from "styled-components";
 
+
+const StyledSignUp = styled.div`
+  div input {
+    display: block;
+  }
+`
 const initialSignupValues = {
     username: '',
     email: '',
@@ -24,59 +31,61 @@ const Signup = () => {
   }
 
   return (
-  <section>
-    <div className='signup-page'>
-      <h1 className='pageTitle'>Login</h1>
-      <form id='signup' onSubmit={onSubmit}>
-        <label> Username:
-            <input 
-                id='signup-username'
-                type='text'
-                name='username' 
-                //value={signupValues.username}
-                onChange={onChange}
-            />
-        </label>
-        <label> Email:
-            <input
-                id='signup-email'
-                type='email'
-                name='email'
-                //value={signupValues.email}
-                onChange={onChange}
-            />
-        </label>  
-        <label> Confirm Email:
-            <input
-                id='signup-confirm-email'
-                type='email'
-                name='confirm-email'
-                //value={signupValues.confirmEmail}
-                onChange={onChange}
-            />
-        </label> 
-        <label> Password:
-            <input
-                id='signup-password'
-                type='password'
-                name='password'
-                //value={signupValues.password}
-                onChange={onChange}
-            />
-        </label>
-        <label> Confirm Password:
-            <input
-                id='signup-confirm-password'
-                type='password'
-                name='confirm-password'
-                //value={signupValues.confirmPassword}
-                onChange={onChange}
-            />
-        </label>
-        <button>Submit</button>
-      </form>
-    </div>
-  </section>
+    <StyledSignUp>
+      <section>
+        <div className='signup-page'>
+          <h1 className='pageTitle'>Login</h1>
+          <form id='signup' onSubmit={onSubmit}>
+            <label> Username:
+                <input 
+                    id='signup-username'
+                    type='text'
+                    name='username' 
+                    //value={signupValues.username}
+                    onChange={onChange}
+                />
+            </label>
+            <label> Email:
+                <input
+                    id='signup-email'
+                    type='email'
+                    name='email'
+                    //value={signupValues.email}
+                    onChange={onChange}
+                />
+            </label>  
+            <label> Confirm Email:
+                <input
+                    id='signup-confirm-email'
+                    type='email'
+                    name='confirm-email'
+                    //value={signupValues.confirmEmail}
+                    onChange={onChange}
+                />
+            </label> 
+            <label> Password:
+                <input
+                    id='signup-password'
+                    type='password'
+                    name='password'
+                    //value={signupValues.password}
+                    onChange={onChange}
+                />
+            </label>
+            <label> Confirm Password:
+                <input
+                    id='signup-confirm-password'
+                    type='password'
+                    name='confirm-password'
+                    //value={signupValues.confirmPassword}
+                    onChange={onChange}
+                />
+            </label>
+            <button>Submit</button>
+          </form>
+        </div>
+      </section>
+    </StyledSignUp>
   );
 };
 

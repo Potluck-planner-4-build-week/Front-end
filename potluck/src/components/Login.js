@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { Link, Route } from "react-router-dom";
+import Signup from "./Signup";
 
 const initialLoginValues = {
   username: '',
@@ -46,8 +48,19 @@ const Login = () => {
           />
         </label>
 
-        <button>Submit</button>
+        <button>Submit</button>   
+        
+        <Link to='/signup'>
+          <button>Signup</button>
+        </Link>
+        <Route path='/signup'>
+          <Signup/>
+        </Route> 
+        
       </form>
+
+      
+
     </div>
   </section>
   );

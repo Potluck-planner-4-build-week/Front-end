@@ -4,8 +4,15 @@ import { PrivateRoute } from "./components/PrivateRoute";
 import CoverPage from "./components/CoverPage";
 import CreatePotluckPage from "./components/CreatePotluckPage";
 import Logout from "./components/Logout";
+<<<<<<< HEAD
 import Login from "./components/Login";
 import NavBar from "./components/NavBar";
+=======
+import Login from "./components/Login"; 
+import Dashboard from "./components/Dashboard"; 
+import NavBar from "./components/NavBar";
+
+>>>>>>> main
 import Signup from "./components/Signup";
 import ViewPage from "./components/ViewPage/ViewPage";
 import * as yup from "yup";
@@ -21,6 +28,9 @@ function App() {
         </PrivateRoute>
         <Route path="/login">
           <Login />
+        </Route>
+        <Route path="/dashboard">
+          <Dashboard />
         </Route>
         <PrivateRoute path="/potluck/create">
           <CreatePotluckPage />
@@ -38,6 +48,7 @@ function App() {
           <Signup />
         </Route>
       </Switch>
+
     </div>
   );
 }
