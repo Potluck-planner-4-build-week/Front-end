@@ -37,10 +37,15 @@ html{
 }
 
 section {
-  width: 50vw;
-  font-size:1.6rem;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  min-height: 70vw;
+  height: fit-content;
+  font-size: 1.6rem;
   color: white;
-  font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-family: "Yanone Kaffeesatz", sans-serif;
   background: black;
   margin: none;
 }
@@ -50,15 +55,18 @@ h1, h2, h3{
   font-weight: 400;
   color:white;
   text-align:center;
+
   letter-spacing: 0.1rem;
   padding: 30px 0px;
 }
+
 
 h2{
   font-size: 4rem;
 }
 
 h3{
+
   color: black;
   font-size: 3rem;
 }
@@ -70,37 +78,21 @@ h3{
   padding: 16px;
 }
 
-
 .pageTitle {
   color:white;
   font-weight: 300;
   font-size: 5rem
 }
 
-button { 
-  padding: 5px;
-  border-radius: 5px;
-  background-color: #92828d;
-}
-
-.styledButton {
-  font-family: 'Yanone Kaffeesatz', sans-serif;
-  font-weight: 400;
-  color: black;
-  text-align:center;
-  letter-spacing: 0.1rem;
-  font-size: 2rem;
-  background-color: #adaabf; 
-  border: 2px solid  #92828d;
-}
-
 .info {
+  display: flex;
+  flex-flow: column nowrap;
+  width: 100%;
   background-color: #d2d2d2;
-  padding: 1vw;
-  line-height: 2;
+  font-size: 1.8rem;
+  line-height: 1.5;
 }
 /*  info is a list: date/time info etc */
-
 
 .alert {
   padding: 20px;
@@ -108,10 +100,140 @@ button {
   margin-bottom: 15px;
 }
 
+.mtg {
+  margin: 0 100%;
+  margin-bottom: 15px;
+}
+
 .meeting {
+  text-align: center;
+  max-width: 80vw;
+  margin-left:10vw;
   background-color: #eaf7cf;
   border: 3px solid #ceb5a7;
   border-radius: 3px;
   color: black;
   margin-bottom: 15px;
+}
+
+a {
+  font: inherit;
+}
+
+section div {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}
+
+form {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  max-width:fit-content;
+  height: 85vh;
+}
+
+form * {
+  font-family: "Yanone Kaffeesatz", sans-serif;
+  font-weight: 500;
+  font-size: 2rem;
+  margin: 1vw auto;
+  padding: 5px 20px;
+}
+
+button {
+  border-radius: 5px;
+  background-color: #92828d;
+  font-family: "Yanone Kaffeesatz", sans-serif;
+  padding: 5px 20px;
+}
+
+input {
+  display: block;
+  width: 80vw;
+}
+
+
+
+.styledButton {
+
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-weight: 400;
+  color: black;
+  text-align:center;
+  letter-spacing: 0.1rem;
+  font-size: 2rem;
+  margin: 1vw auto;
+  padding: 5px 20px;
+  background-color: #adaabf;
+  border: 2px solid #92828d;
+}
+
+.hidden {
+  display: none;
+}
+
+label {
+  color: white;
+  display: block;
+}
+
+@media (min-width: 400px) {
+  a {  
+    font-family: "Yanone Kaffeesatz", sans-serif;
+    text-align: center;
+    padding-top: 10px;
+    color: black;
+    width: 150px;
+    height: 40px;
+    text-shadow:none;
+    background-color: 2px solid #adaabf;
+  }
+
+  input {
+    max-width: 350px;
+  }
+}
+
+@media (min-width: 700px) {
+  .mtg-container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+  }
+  
+  div.meeting {
+    width: 40vw;
+    min-width: auto;
+    margin: 20px;
+  }
+
+  .info *{
+    margin: 0;
+  }
+  button {
+    margin: 10px 0;
+  }
+
+  .alert {
+    height: fit-content;
+    width: 40vw;
+  }
+}
+
+@media (min-width: 1200px) {
+  .mtg-container {
+    justify-content: space-between;
+  }
+  
+  div.meeting {
+    width: 31vw;
+    margin: 1vw;
+  }
+
+  .alert {
+    height: fit-content;
+    width: 31vw;
+  }
 }

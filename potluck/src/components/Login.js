@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react";
 import formSchema from "./Validation/LoginFormSchema";
 import * as yup from 'yup';
+import { Link, Route } from "react-router-dom";
+import Signup from "./Signup";
+
 
 const initialLoginValues = {
   username: '',
@@ -67,8 +70,14 @@ const Login = () => {
             onChange={handleChange}
           />
         </label>
-
-        <button disabled={disabled}>Submit</button>
+        <button disabled={disabled}>Submit</button>  
+        
+        <Link to='/signup'>
+          <button>Signup</button>
+        </Link>
+        <Route path='/signup'>
+          <Signup/>
+        </Route> 
       </form>
     </div>
   </section>

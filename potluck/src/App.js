@@ -5,23 +5,28 @@ import { PrivateRoute } from "./components/PrivateRoute";
 import CreatePotluckPage from "./components/CreatePotluckPage";
 import Logout from "./components/Logout";
 import Login from "./components/Login"; 
+import Dashboard from "./components/Dashboard"; 
+import NavBar from "./components/NavBar";
+
 import Signup from "./components/Signup";
 
 import * as yup from 'yup';
 import form from './components/Validation/LoginFormSchema';
 
+
 function App() {
   return (
     <div className="App">
-      <nav>
-      <Link to="/logout">Logout</Link>
-      </nav>
+      <NavBar />
       <Switch>
         <PrivateRoute path="/logout">
           <Logout />
         </PrivateRoute>
         <Route path="/login">
           <Login />
+        </Route>
+        <Route path="/dashboard">
+          <Dashboard />
         </Route>
         <PrivateRoute path="/potluck/create">
           <CreatePotluckPage />
@@ -30,6 +35,7 @@ function App() {
           <Signup />
         </Route>
       </Switch>
+
     </div>
    
   );

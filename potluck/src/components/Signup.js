@@ -1,7 +1,14 @@
 import React, { useEffect, useState } from "react";
 import formSchemaSignup from "./Validation/signupFormSchema";
 import * as yup from "yup";
+import styled from "styled-components";
 
+
+const StyledSignUp = styled.div`
+  div input {
+    display: block;
+  }
+`
 const initialSignupValues = {
   username: "",
   email: "",
@@ -74,6 +81,7 @@ const Signup = () => {
   };
 
   return (
+  <StyledSignUp>
     <section>
       <div className="signup-page">
         <h1 className="pageTitle">Signup</h1>
@@ -144,6 +152,7 @@ const Signup = () => {
         </form>
       </div>
     </section>
+  </StyledSignUp>
   );
 };
 
