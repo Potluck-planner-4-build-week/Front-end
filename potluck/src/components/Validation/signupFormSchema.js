@@ -1,35 +1,35 @@
-import * as yup from 'yup';
+import * as yup from "yup";
 
 const formSchemaSignup = yup.object().shape({
-    username: yup
+  username: yup
     .string()
     .trim()
-    .required()
-    .min(4, 'username must be at least 4 characters.'),
+    .required("Username is required!")
+    .min(4, "username must be at least 4 characters."),
 
-    email: yup
+  email: yup
     .string()
-    .email('This email address is not valid.')
+    .email("This email address is not valid.")
     .trim()
-    .required(),
+    .required("Email is required!"),
 
-    confirmEmail: yup
+  confirmEmail: yup
     .string()
     .trim()
-    .required()
-    .oneOf([yup.ref('email'), null], 'Email addresses do not match.'),
+    .required("Please confirm your email!")
+    .oneOf([yup.ref("email"), null], "Email addresses do not match."),
 
-    password: yup
+  password: yup
     .string()
     .trim()
-    .required()
-    .min(4, 'Password must be at least 4 characters.'),
+    .required("Password is required!")
+    .min(4, "Password must be at least 4 characters."),
 
-    confirmPassword: yup
+  confirmPassword: yup
     .string()
     .trim()
-    .required()
-    .oneOf([yup.ref('password'), null], 'Passwords do not match.')
-})
+    .required("Please confirm your password!")
+    .oneOf([yup.ref("password"), null], "Passwords do not match."),
+});
 
 export default formSchemaSignup;
