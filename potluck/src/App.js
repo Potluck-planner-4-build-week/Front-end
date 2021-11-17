@@ -8,6 +8,12 @@ import Login from "./components/Login";
 import Dashboard from "./components/Dashboard"; 
 import NavBar from "./components/NavBar";
 
+import Signup from "./components/Signup";
+
+import * as yup from 'yup';
+import form from './components/Validation/LoginFormSchema';
+
+
 function App() {
   return (
     <div className="App">
@@ -25,6 +31,9 @@ function App() {
         <PrivateRoute path="/potluck/create">
           <CreatePotluckPage />
         </PrivateRoute>
+        <Route path="/signup">
+          <Signup />
+        </Route>
       </Switch>
 
     </div>

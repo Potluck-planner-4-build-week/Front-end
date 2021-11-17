@@ -25,15 +25,15 @@ time, mark, audio, video {
   outline: 0;
 }
 
-* {
-  box-sizing: border-box;
-  padding: 0;
+*{
+  box-sizing:border-box;
+  padding:0;
   margin: 0;
   max-width: 100%;
 }
 
-html {
-  font-size: 62.5%;
+html{
+  font-size:62.5%;
 }
 
 section {
@@ -50,22 +50,23 @@ section {
   margin: none;
 }
 
-h1,
-h2,
-h3 {
-  font-family: "Yanone Kaffeesatz", sans-serif;
+h1, h2, h3{
+  font-family: 'Yanone Kaffeesatz', sans-serif;
   font-weight: 400;
-  color: white;
-  text-align: center;
+  color:white;
+  text-align:center;
+
   letter-spacing: 0.1rem;
   padding: 30px 0px;
 }
 
-h2 {
+
+h2{
   font-size: 4rem;
 }
 
-h3 {
+h3{
+
   color: black;
   font-size: 3rem;
 }
@@ -78,9 +79,9 @@ h3 {
 }
 
 .pageTitle {
-  color: white;
+  color:white;
   font-weight: 300;
-  font-size: 5rem;
+  font-size: 5rem
 }
 
 .info {
@@ -99,7 +100,6 @@ h3 {
   margin-bottom: 15px;
 }
 
-
 .mtg {
   margin: 0 100%;
   margin-bottom: 15px;
@@ -115,7 +115,6 @@ h3 {
   color: black;
   margin-bottom: 15px;
 }
-
 
 a {
   font: inherit;;
@@ -152,10 +151,11 @@ input {
 }
 
 .styledButton {
-  font-family: "Yanone Kaffeesatz", sans-serif;
+
+  font-family: 'Yanone Kaffeesatz', sans-serif;
   font-weight: 400;
   color: black;
-  text-align: center;
+  text-align:center;
   letter-spacing: 0.1rem;
   font-size: 2rem;
   margin: 1vw auto;
