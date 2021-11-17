@@ -5,8 +5,18 @@ import axios from "axios";
 import styled from "styled-components";
 
 const StyledCreatePage = styled.div`
-  color: red;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: black;
+    height: 110vh;
+    form{
+        height: fit-content;
+      }
 
+    @media (min-width: 900px){
+      height: 145vh;
+    }
 `
 
 const initialPotluckValues = {

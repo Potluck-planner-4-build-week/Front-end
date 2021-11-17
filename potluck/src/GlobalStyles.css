@@ -117,7 +117,7 @@ h3{
 }
 
 a {
-  font: inherit;;
+  font: inherit;
 }
 
 section div {
@@ -135,6 +135,9 @@ form {
 }
 
 form * {
+  font-family: "Yanone Kaffeesatz", sans-serif;
+  font-weight: 500;
+  font-size: 2rem;
   margin: 1vw auto;
   padding: 5px 20px;
 }
@@ -142,13 +145,16 @@ form * {
 button {
   border-radius: 5px;
   background-color: #92828d;
-  max-width: fit-content;
-  font: inherit;
+  font-family: "Yanone Kaffeesatz", sans-serif;
+  padding: 5px 20px;
 }
 
 input {
+  display: block;
   width: 80vw;
 }
+
+
 
 .styledButton {
 
@@ -169,6 +175,7 @@ input {
 }
 
 label {
+  color: white;
   display: block;
 }
 

@@ -1,14 +1,36 @@
 import React, { useState, useEffect } from "react";
+import { Link, Route } from "react-router-dom";
 import "../GlobalStyles.css";
 import styled from "styled-components";
-
+import CreatePotluckPage from "./CreatePotluckPage";
 
 const StyledDashboard = styled.div`
   display: flex;
   flex-direction: column;
   min-height: 100vh;
   background-color: black;
+  align-items: center;
+  
+  button {
+    font-size: 2rem;
+  }
+
+  h2 {
+    line-height: 8rem;
+  }
+  
+  @media (min-width: 700px){
+    button {
+      font-size: 2.5rem;
+    }
+
+    h2 {
+      margin: none;
+      padding: 50px 0 0 0;
+    }
+  }
 `
+
 const myPotlucks = [ 
   {
     meetingName: "Foodapaloosa",
@@ -104,7 +126,12 @@ const Dashboard = () => {
   return (
     <StyledDashboard>
       <h1 className="pageTitle">Dashboard</h1>
-      <button className="styledButton" onClick={newPotluck}>Create New Potluck</button>
+      <Link to="/potluck/create">
+        <button >Create New Potluck</button>
+      </Link>
+        <Route path="/potluck/create">
+          <CreatePotluckPage />
+        </Route> 
       <h2>My Potlucks</h2>
 
       <section id="myPotlucks" className="mtg-container">
