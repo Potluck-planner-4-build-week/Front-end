@@ -1,27 +1,23 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
-<<<<<<< HEAD
-import axiosWithAuth from "../ultils/axiosWithAuth";
-=======
 //axios is here for  now until we make axiosWithAuth()
 import axios from "axios";
 import styled from "styled-components";
 
 const StyledCreatePage = styled.div`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: black;
-    height: 110vh;
-    form{
-        height: fit-content;
-      }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: black;
+  height: 110vh;
+  form {
+    height: fit-content;
+  }
 
-    @media (min-width: 900px){
-      height: 145vh;
-    }
-`
->>>>>>> main
+  @media (min-width: 900px) {
+    height: 145vh;
+  }
+`;
 
 const initialPotluckValues = {
   potluck_name: "",

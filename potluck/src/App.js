@@ -4,20 +4,15 @@ import { PrivateRoute } from "./components/PrivateRoute";
 import CoverPage from "./components/CoverPage";
 import CreatePotluckPage from "./components/CreatePotluckPage";
 import Logout from "./components/Logout";
-<<<<<<< HEAD
 import Login from "./components/Login";
-import NavBar from "./components/NavBar";
-=======
-import Login from "./components/Login"; 
-import Dashboard from "./components/Dashboard"; 
+import Dashboard from "./components/Dashboard";
 import NavBar from "./components/NavBar";
 
->>>>>>> main
 import Signup from "./components/Signup";
 import ViewPage from "./components/ViewPage/ViewPage";
 import * as yup from "yup";
 import form from "./components/Validation/LoginFormSchema";
-import Dashboard from "./components/Dashboard";
+
 function App() {
   return (
     <div className="App">
@@ -48,7 +43,6 @@ function App() {
           <Signup />
         </Route>
       </Switch>
-
     </div>
   );
 }
