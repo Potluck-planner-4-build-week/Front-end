@@ -1,18 +1,17 @@
 import React, { useEffect, useState } from "react";
 import { Switch, Link, Route, Redirect } from "react-router-dom";
 import { PrivateRoute } from "./components/PrivateRoute";
-
+import CoverPage from "./components/CoverPage";
 import CreatePotluckPage from "./components/CreatePotluckPage";
 import Logout from "./components/Logout";
-import Login from "./components/Login"; 
-import Dashboard from "./components/Dashboard"; 
+import Login from "./components/Login";
+import Dashboard from "./components/Dashboard";
 import NavBar from "./components/NavBar";
 
 import Signup from "./components/Signup";
-
-import * as yup from 'yup';
-import form from './components/Validation/LoginFormSchema';
-
+import ViewPage from "./components/ViewPage/ViewPage";
+import * as yup from "yup";
+import form from "./components/Validation/LoginFormSchema";
 
 function App() {
   return (
@@ -31,13 +30,20 @@ function App() {
         <PrivateRoute path="/potluck/create">
           <CreatePotluckPage />
         </PrivateRoute>
+        <PrivateRoute path="/potluck/view">
+          <ViewPage />
+        </PrivateRoute>
+        <PrivateRoute path="/dashboard">
+          <Dashboard />
+        </PrivateRoute>
+        <Route exact path="/">
+          <CoverPage />
+        </Route>
         <Route path="/signup">
           <Signup />
         </Route>
       </Switch>
-
     </div>
-   
   );
 }
 
