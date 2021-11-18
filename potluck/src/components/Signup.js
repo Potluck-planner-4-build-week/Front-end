@@ -5,8 +5,10 @@ import styled from "styled-components";
 
 
 const StyledSignUp = styled.div`
-  div input {
+
+  div div {
     display: block;
+    position: absolute;
   }
 `
 const initialSignupValues = {
