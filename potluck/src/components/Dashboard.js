@@ -2,8 +2,6 @@ import React, { useState, useEffect } from "react";
 import { Link, Route, useHistory } from "react-router-dom";
 import "../GlobalStyles.css";
 import styled from "styled-components";
-import CreatePotluckPage from "./CreatePotluckPage";
-import axios from "axios";
 
 const StyledDashboard = styled.div`
   display: flex;
@@ -161,12 +159,11 @@ const Dashboard = () => {
   return (
     <StyledDashboard>
       <h1 className="pageTitle">Dashboard</h1>
+      
       <Link to="/potluck/create">
-        <button>Create New Potluck</button>
+        <button className="newPotLuck-button">Create New Potluck</button>
       </Link>
-      <Route path="/potluck/create">
-        <CreatePotluckPage />
-      </Route>
+      
       <h2>My Potlucks</h2>
 
       <section id="myPotlucks" className="mtg-container">

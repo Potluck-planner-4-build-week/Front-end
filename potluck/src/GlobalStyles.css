@@ -149,6 +149,12 @@ button {
   padding: 5px 20px;
 }
 
+button:disabled {
+  color: black;
+  background-color: #92828d;
+  cursor: not-allowed;
+}
+
 input {
   display: block;
   width: 80vw;
