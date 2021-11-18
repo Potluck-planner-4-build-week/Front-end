@@ -6,8 +6,10 @@ import axios from "axios";
 import { useHistory } from "react-router-dom";
 
 const StyledSignUp = styled.div`
-  div input {
+
+  div div {
     display: block;
+    position: absolute;
   }
 `;
 const initialSignupValues = {
