@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link, useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "../GlobalStyles.css";
 import styled from "styled-components";
 import axios from "axios";
@@ -54,7 +54,6 @@ const myPotlucks = [
     date: "11/19/2021",
     time: "12PM-1PM",
     location: "McArthur Park",
-    userRole: "guest",
     confirmed: false
   },
   {
@@ -70,7 +69,6 @@ const myPotlucks = [
     date: "11/26/2021",
     time: "11AM-12PM",
     location: "BJHS staff lounge",
-    userRole: "organizer",
     confirmed: false
   },
   {
@@ -86,8 +84,6 @@ const myPotlucks = [
     date: "11/26/2021",
     time: "11AM-12PM",
     location: "BJHS staff lounge",
-    userRole: "organizer",
-    userItem: "turkey",
     confirmed: false,
   },
   {
@@ -103,7 +99,6 @@ const myPotlucks = [
     date: "11/26/2021",
     time: "11AM-12PM",
     location: "BJHS staff lounge",
-    userItem: "turkey",
     confirmed: false,
   },
 ];
@@ -117,10 +112,7 @@ const initialUserItems = myPotlucks.map(p => {
   }
 })
     
-
 const Dashboard = () => {
-  //destructuring
-  const { push } = useHistory();
 
   //state
   const [myPotluckData, setMyPotluckData] = useState(myPotlucks);
@@ -169,19 +161,14 @@ const Dashboard = () => {
     
     setMyPotluckData(newPotluckData);    
     
-    //axios.post('https://reqres.in/users', myPotluckData)
-    // .then(function (response) {
-    //   console.log(response);
-    // })
-    // .catch(function (error) {
-    //   console.log(error);
-    // });
+    axios.post('https://reqres.in/api/users', myPotluckData)
+    .then(function (response) {
+      console.log(response);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
   }
-
-  const newPotluck = () => {
-    // link to new potluck component
-  };
-  let potluckCount = 0;
 
   return (
     <StyledDashboard>
