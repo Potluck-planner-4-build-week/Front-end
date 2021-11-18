@@ -94,7 +94,7 @@ const Signup = () => {
     };
     try {
       await axios.post(
-        "https://back-end-node-postgresql.herokuapp.com/api/register",
+        "https://back-end-node-postgresql.herokuapp.com/api/auth/register",
         newUserInfo
       );
 
