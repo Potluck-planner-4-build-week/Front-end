@@ -5,19 +5,19 @@ import axios from "axios";
 import styled from "styled-components";
 
 const StyledCreatePage = styled.div`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: black;
-    height: 110vh;
-    form{
-        height: fit-content;
-      }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: black;
+  height: 110vh;
+  form {
+    height: fit-content;
+  }
 
-    @media (min-width: 900px){
-      height: 145vh;
-    }
-`
+  @media (min-width: 900px) {
+    height: 145vh;
+  }
+`;
 
 const initialPotluckValues = {
   potluck_name: "",
@@ -35,8 +35,12 @@ const CreatePotluckPage = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // axios.post("link here whenever its ready", potluckValues);
-    // push('/login')
+    // axiosWithAuth()
+    //   .post("/api/events", potluckValues)
+    //   .then((resp) => {
+    //     console.log(resp.data);
+    //   });
+    push("/dashboard");
   };
   const handleChange = (e) => {
     setPotluckValues({
