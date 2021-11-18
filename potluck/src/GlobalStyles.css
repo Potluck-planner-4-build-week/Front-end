@@ -217,6 +217,10 @@ label {
     height: fit-content;
     width: 40vw;
   }
+
+  section {
+    min-height: 120vw;
+  }
 }
 
 @media (min-width: 1200px) {
