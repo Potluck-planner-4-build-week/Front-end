@@ -33,6 +33,7 @@ const initialPasswordConfirm = {
 const Signup = () => {
   // state
   const [signupValues, setSignupValues] = useState(initialSignupValues);
+  const [disabled, setDisabled] = useState(true);
   const [formErrors, setFormErrors] = useState(initialFormErrors);
   const [emailConfirm, setEmailConfirm] = useState(initialEmailConfirm);
   const [passwordConfirm, setPasswordConfirm] = useState(
@@ -76,6 +77,9 @@ const Signup = () => {
     signupValues.confirmPassword,
   ]);
 
+  useEffect(() => {
+    formSchemaSignup.isValid(signupValues).then(valid => setDisabled(!valid))
+  }, [signupValues])
   const onSubmit = (e) => {
     e.preventDefault();
   };
@@ -148,7 +152,7 @@ const Signup = () => {
               onChange={handleChange}
             />
           </label>
-          <button>Submit</button>
+          <button disabled={disabled}>Submit</button>
         </form>
       </div>
     </section>
