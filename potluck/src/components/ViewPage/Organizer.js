@@ -1,6 +1,4 @@
 import React, { useState, useEffect, useContext, createContext } from "react";
-import { useParams } from "react-router-dom";
-import axiosWithAuth from "../../ultils/axiosWithAuth";
 
 const Organizer = (username) => {
   //Destructuring

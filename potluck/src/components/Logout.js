@@ -1,23 +1,21 @@
-import React, { useEffect } from 'react';
-import { useHistory } from 'react-router-dom';
+import React, { useEffect } from "react";
+import { useHistory } from "react-router-dom";
 
-import axiosWithAuth from '../ultils/axiosWithAuth';
+import axiosWithAuth from "../utils/axiosWithAuth";
 
 const Logout = () => {
-    
-    const { push } = useHistory()
+  const { push } = useHistory();
 
-    useEffect(() => {
+  useEffect(() => {
+    axiosWithAuth()
+      .post("./logout")
+      .then(() => {
+        localStorage.removeItem("token");
+        push("/login");
+      });
+  }, []);
 
-        axiosWithAuth().post('./logout')
-        .then(() => {
-            localStorage.removeItem('token');
-            push('/login');
-        })
-
-    }, [])
-
-    return(<div></div>)
-}
+  return <div></div>;
+};
 
 export default Logout;

@@ -2,13 +2,14 @@ import React, { useEffect, useState } from "react";
 import formSchemaSignup from "./Validation/signupFormSchema";
 import * as yup from "yup";
 import styled from "styled-components";
-
+import axios from "axios";
+import { useHistory } from "react-router-dom";
 
 const StyledSignUp = styled.div`
   div input {
     display: block;
   }
-`
+`;
 const initialSignupValues = {
   username: "",
   email: "",
@@ -31,6 +32,8 @@ const initialPasswordConfirm = {
 };
 
 const Signup = () => {
+  const { push } = useHistory();
+
   // state
   const [signupValues, setSignupValues] = useState(initialSignupValues);
   const [disabled, setDisabled] = useState(true);
@@ -39,6 +42,7 @@ const Signup = () => {
   const [passwordConfirm, setPasswordConfirm] = useState(
     initialPasswordConfirm
   );
+  const [usernameTaken, setUserNameTaken] = useState("");
 
   // validation
   const validate = async (name, value) => {
@@ -77,14 +81,33 @@ const Signup = () => {
     signupValues.confirmPassword,
   ]);
 
+
   useEffect(() => {
     formSchemaSignup.isValid(signupValues).then(valid => setDisabled(!valid))
   }, [signupValues])
   const onSubmit = (e) => {
     e.preventDefault();
+    const newUserInfo = {
+      email: signupValues.email.trim(),
+      password: signupValues.password.trim(),
+      username: signupValues.username.trim(),
+    };
+    try {
+      await axios.post(
+        "https://back-end-node-postgresql.herokuapp.com/api/register",
+        newUserInfo
+      );
+
+      push("/login");
+    } catch (error) {
+      setUserNameTaken(
+        "This username is already inuse, please choose another one!"
+      );
+    }
   };
 
   return (
+
   <StyledSignUp>
     <section>
       <div className="signup-page">
@@ -157,6 +180,7 @@ const Signup = () => {
       </div>
     </section>
   </StyledSignUp>
+
   );
 };
 
