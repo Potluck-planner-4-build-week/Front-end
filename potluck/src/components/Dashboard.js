@@ -4,6 +4,8 @@ import "../GlobalStyles.css";
 import styled from "styled-components";
 import axios from "axios";
 
+const userLoggedIn = "Phil2";
+
 const StyledDashboard = styled.div`
   display: flex;
   flex-direction: column;
@@ -100,38 +102,45 @@ const myPotlucks = [
     time: "11AM-12PM",
     location: "BJHS staff lounge",
     confirmed: false,
-  },
+  }
 ];
 
-const userLoggedIn = "Phil2";
+const getConfirmedText = (confirmed) => {
+  return confirmed? "Cancel Confirmation?" : "Confirm You're Going!"
+}
 
-const initialUserItems = myPotlucks.map(p => {
+const initialUserData = myPotlucks.map( p => {
+  const currentUser = p.people.find( p => p.username === userLoggedIn);
   return { 
-    item: p.people.find(p => p.username === userLoggedIn).item,
-    id: p.meetingId 
+    username: currentUser.username,
+    item: currentUser.item,
+    confirmed: currentUser.confirmed,
+    id: p.meetingId,
+    confirmedText: getConfirmedText(currentUser.confirmed)
   }
 })
-    
+
+
 const Dashboard = () => {
 
   //state
   const [myPotluckData, setMyPotluckData] = useState(myPotlucks);
-  const [confirmed, setConfirmed] = useState(false);
-  const [confirmText, setConfirmText] = useState("");
-  const [userItems, setUserItems] = useState(initialUserItems);
+  const [userData, setUserData] = useState(initialUserData);
   const [hidden, setHidden] = useState(true);
   const [detailsClass, setDetailsClass] = useState("");
 
-  useEffect(() => {
-    confirmed
-      ? setConfirmText("Not Going? Cancel")
-      : setConfirmText("Confirm You're Going!");
-  }, [confirmed]);
-
-  const confirmClick = (e) => {
-    e.preventDefault();
-    setConfirmed(!confirmed);
-  };
+  useEffect(() => { 
+    const newUserData= userData.map( u => {
+      return { 
+        username: u.username,
+        item: u.item,
+        id: u.id,
+        confirmedText: getConfirmedText(myPotluckData.find(p => p.meetingId === u.id).people.find( p => p.username === u.username).confirmed)
+      }
+    })
+    
+    setUserData(newUserData);
+  }, [myPotluckData]);
 
   useEffect(() => {
     hidden ? setDetailsClass("") : setDetailsClass("hidden");
@@ -143,10 +152,10 @@ const Dashboard = () => {
   };
 
   const selectUserItem = (e) => {
-    const newUserItems = [...userItems];
-    const optionIdx = userItems.indexOf(userItems.find( i => i.id === e.target.id));
-    newUserItems[optionIdx].item = e.target.value
-    setUserItems(newUserItems);
+    const newUserData= [...userData];
+    const optionIdx = userData.indexOf(userData.find( i => i.id === e.target.id));
+    newUserData[optionIdx].item = e.target.value
+    setUserData(newUserData);
   }
 
   const changeItem = (e) => {
@@ -156,7 +165,7 @@ const Dashboard = () => {
     const currentUser = currentPotluck.people.find( p => p.username === userLoggedIn)
     const currUsrIdx = currentPotluck.people.indexOf(currentUser);
     let newPotluckData = [...myPotluckData];
-    const selectedItem = userItems.find( i => i.id === e.target.name).item;
+    const selectedItem = userData.find( i => i.id === e.target.name).item;
     newPotluckData[currPotIdx]["people"][currUsrIdx]["item"] = selectedItem;
     
     setMyPotluckData(newPotluckData);    
@@ -169,10 +178,33 @@ const Dashboard = () => {
       console.log(error);
     });
   }
+  
+  const changeConfirmed = (e) => {
+    e.preventDefault();
+    const currentPotluck = myPotluckData.find( p => p.meetingId === e.target.name)
+    const currPotIdx = myPotluckData.indexOf(currentPotluck);
+    const currentUser = currentPotluck.people.find( p => p.username === userLoggedIn)
+    const currUsrIdx = currentPotluck.people.indexOf(currentUser);
+    let newPotluckData = [...myPotluckData];
+    const currConfirmed = newPotluckData[currPotIdx]["people"][currUsrIdx]["confirmed"];
+    newPotluckData[currPotIdx]["people"][currUsrIdx]["confirmed"] = !currConfirmed;
+    return setMyPotluckData(newPotluckData);
+  }
+  
+  useEffect ( () => {  
+    axios.post('https://reqres.in/api/users', myPotluckData)
+    .then(function (response) {
+      console.log(response);
+    })
+    .catch(function (error) {
+      console.log(error);
+    })}
+  , [myPotluckData])
+
 
   return (
     <StyledDashboard>
-      <h1 className="pageTitle">Dashboard</h1>
+      <h1 className="pageTitle">{`${userLoggedIn}`}'s Dashboard</h1>
       
       <Link to="/potluck/create">
         <button className="newPotLuck-button">Create New Potluck</button>
@@ -192,7 +224,6 @@ const Dashboard = () => {
                   <h3 className="potluckName">{`${potluck["meetingName"]}`}</h3>
                   
                   <ul>
-                    
                     <form name={potluck.meetingId}>
                       <li>I'm bringing: {potluck.people.find(p => p.username === userLoggedIn).item}</li>
                       <select 
@@ -243,8 +274,8 @@ const Dashboard = () => {
                 </ul>
               </div>
               <div className="alert">
-                <button className="styledButton" onClick={confirmClick}>
-                  {`${confirmText}`}
+                <button name={potluck.meetingId} className="styledButton" onClick={changeConfirmed}>
+                  {`${userData.find( p => p.id === potluck.meetingId).confirmedText}`}
                 </button>
               </div>
             </div>

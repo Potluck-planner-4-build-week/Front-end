@@ -54,3 +54,7 @@ https://docs.google.com/document/d/1nkA7Xo5Pbbkb2JkDORICQk7ChhfeQY1nQfXKTpJEIfo/
 **[DELETE]** to `https://back-end-nodes-postgresql.herokuapp.com/api/events/:id`; removes the event with the `id` referenced. Returns all available events. 
 <!-- This endpoint needs to be created in the backend (IF THERES STILL TIME!) -->
 *This endpoint can only be accessed by an authenticated user.*
+
+
+Dashboard:
+  The features that allow guests to change their item and confirm they're going are tested by axios post requests to reqres. 
