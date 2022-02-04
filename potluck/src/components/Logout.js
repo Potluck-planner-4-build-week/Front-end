@@ -10,7 +10,7 @@ const Logout = () => {
     axiosWithAuth()
       .post("./logout")
       .then(() => {
-        localStorage.removeItem("token");
+        localStorage.removeItem("token"); // when a token is removed, they no longer have access to the components wrapped with the PrivateRoute Component.
         push("/login");
       });
   }, []);
